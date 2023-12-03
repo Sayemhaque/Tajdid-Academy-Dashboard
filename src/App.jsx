@@ -1,9 +1,10 @@
+import Dashboard from "./pages/Dashboard/Dashboard"
 
 
 function App() {
   return (
     <>
-      <p className="text-6xl">Bismillah</p>
+     <Dashboard/>
     </>
   )
 }
