@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button"
 import { FiChevronDown } from "react-icons/fi"
 const Header = () => {
@@ -7,10 +8,12 @@ const Header = () => {
                 <h3 className="text-3xl font-bold">Products</h3>
                 <div className="flex items-center gap-8">
                     {/* Button */}
-                    <Button
+                   <Link to="create">
+                   <Button
                         styles={"bg-[#1570EF] text-sm py-2 px-5 rounded-md text-white"}
                         content={"Create new"}
                     />
+                   </Link>
                     <div className="flex gap-2">
                         {/*Avatar*/}
                         <img src="https://file.xunruicms.com/admin_html/assets/pages/media/profile/profile_user.jpg" className="w-10 h-10 rounded-full" alt="" />

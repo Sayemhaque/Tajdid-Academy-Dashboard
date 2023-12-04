@@ -4,6 +4,7 @@ import Analytics from "../pages/Analytics/Analytics";
 import Billing from "../pages/Billing/Billing";
 import Company from "../pages/Company/Company";
 import ProductContent from "../pages/Products/ProductContent";
+import CreateProduct from "../pages/CreateNewProduct/CreateProduct";
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
         {
             path:"/company",
             element:<Company/>
+        },
+        {
+            path:"/create",
+            element:<CreateProduct/>
         }
       ]
     }
