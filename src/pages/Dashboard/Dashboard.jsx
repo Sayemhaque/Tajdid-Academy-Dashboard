@@ -1,12 +1,16 @@
+import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
 const Dashboard = () => {
     return (
         <>
-            {/* sidebar */}
+            <div className="flex">
+                {/* sidebar */}
             <Sidebar/>
+            <Outlet/>
 
             {/* content area */}
+            </div>
         </>
     );
 };
