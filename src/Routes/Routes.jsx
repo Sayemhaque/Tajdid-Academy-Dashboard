@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App"
-import Analytics from "../components/Analytics/Analytics";
-import Billing from "../components/Billing/Billing";
-import Company from "../components/Company/Company";
-import ProductContent from "../components/Products/ProductContent";
+import Analytics from "../pages/Analytics/Analytics";
+import Billing from "../pages/Billing/Billing";
+import Company from "../pages/Company/Company";
+import ProductContent from "../pages/Products/ProductContent";
+
 
 export const router = createBrowserRouter([
     {
