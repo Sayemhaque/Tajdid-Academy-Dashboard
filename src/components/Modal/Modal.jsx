@@ -12,8 +12,8 @@ const Modal = ({ visible, handleOnClose, onClick, isPending }) => {
                     <h5 className="text-lg font-semibold">Delete product</h5>
                     <FaTimes className="text-lg cursor-pointer" onClick={handleOnClose} />
                 </div>
-                <p className="text-sm text-gray-400 mt-5">Are you sure you want to delete this product from your lists?</p>
-                <div className="flex items-center gap-4 mt-8">
+                <p className="text-sm text-gray-400 mt-3">Are you sure you want to delete this product from your lists?</p>
+                <div className="flex items-center gap-4 mt-6">
                     <Button
                         onClick={handleOnClose}
                         styles={"w-1/2 border border-gray-300"}

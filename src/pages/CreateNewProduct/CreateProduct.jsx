@@ -14,7 +14,7 @@ const CreateProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const { mutate, isSuccess, isPending, isError, error } = useMutation({
         mutationFn: (data) => {
-            return axios.post("https://fakestoreapi.com/productss", data)
+            return axios.post("https://fakestoreapi.com/products", data)
         },
     })
 
