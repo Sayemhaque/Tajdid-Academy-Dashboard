@@ -3,7 +3,7 @@ import Button from "../../components/Button/Button"
 import { FiChevronDown } from "react-icons/fi"
 const Header = () => {
     return (
-        <header className="py-8 md:py-12 px-5 md:px-8 flex justify-between items-center  h-[54px]">
+        <header className="sticky inset-0 z-50 bg-white py-8 md:py-12 px-5 md:px-8 flex justify-between items-center  h-[54px]">
             {/* title */}
             <h3 className="text-xl md:text-3xl font-bold">Products</h3>
             <div className="flex items-center gap-8">

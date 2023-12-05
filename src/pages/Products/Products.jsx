@@ -24,7 +24,7 @@ const Products = () => {
     return (
         <div>
             <section className="grid grid-cols-2 md:grid-cols-3 justify-items-stretch px-5 md:px-8 gap-5">
-                {data?.slice(0, 6).map(product => <ProductCard key={product.id} product={product} />)}
+                {data?.map(product => <ProductCard key={product.id} product={product} />)}
             </section>
             <Pagination currentPage={1} onPageChange={"s"} totalPages={5} key={'s'} />
         </div>

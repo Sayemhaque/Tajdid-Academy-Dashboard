@@ -10,7 +10,7 @@ const Pagination = ({ currentPage, totalPages }) => {
             <div>
                 <p
                     className={`rounded flex items-center gap-2 cursor-pointer ${isPreviousDisabled ? 'text-gray-400 cursor-not-allowed' : ''
-                        } text-gray-100`}
+                        } text-gray-500`}
                     disabled={isPreviousDisabled}
                 >
                     <FiArrowLeft />
@@ -21,7 +21,7 @@ const Pagination = ({ currentPage, totalPages }) => {
                 {[...Array(totalPages)].map((_, index) => (
                     <button
                         key={index + 1}
-                        className={`px-3 py-1 mx-1 rounded ${currentPage === index + 1
+                        className={`font-bold px-3 py-1 mx-1 rounded ${currentPage === index + 1
                             ? 'bg-[#EFF8FF] text-[#1570EF]' : 'text-gray-700'
                             }`}
                     >
