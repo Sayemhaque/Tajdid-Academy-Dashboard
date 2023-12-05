@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import Button from "../Button/Button";
 
 
-const Modal = ({ visible, handleOnClose }) => {
+const Modal = ({ visible, handleOnClose,onClick}) => {
     if (!visible) return null
     return (
         <div className="fixed inset-0 bg-[#344054] bg-opacity-40  flex justify-center items-center backdrop-blur-sm z-50">
@@ -12,7 +12,7 @@ const Modal = ({ visible, handleOnClose }) => {
                     <h5 className="text-lg font-semibold">Delete product</h5>
                     <FaTimes className="text-lg cursor-pointer" onClick={handleOnClose} />
                 </div>
-                <p className="text-sm text-gray-400 mt-5">Are you sure you want to delete “Opna Women's Short Sleeve Moisture” from your lists?</p>
+                <p className="text-sm text-gray-400 mt-5">Are you sure you want to delete “Opna Womens Short Sleeve Moisture” from your lists?</p>
                 <div className="flex items-center gap-4 mt-8">
                     <Button
                         onClick={handleOnClose}
@@ -20,6 +20,7 @@ const Modal = ({ visible, handleOnClose }) => {
                         content={"Cancel"}
                     />
                     <Button
+                        onClick={onClick}
                         styles={"bg-[#E50000] w-1/2  text-sm py-2 rounded-md text-white"}
                         content={"Delete"}
                     />
