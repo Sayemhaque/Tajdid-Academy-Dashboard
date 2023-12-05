@@ -1,9 +1,15 @@
 import Rating from "react-rating";
 import { FiStar } from "react-icons/fi"
 import { FaStar, FaTrashAlt } from "react-icons/fa"
+import Modal from "../../components/Modal/Modal";
+import { useState } from "react";
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
     const { title, price, rating, image } = product;
+    const [showModal,setShowModal] = useState(false)
+    const handleOnClose = () => {
+        setShowModal(false)
+    }
     return (
         <article className="border border-gray-200 p-3">
             <img
@@ -24,10 +30,11 @@ const ProductCard = ({ product }) => {
                         />
                         <span className="text-[#FF9017] text-md font-bold ml-1">{rating.rate}</span>
                     </div>
-                    <FaTrashAlt className="text-[#E50000] cursor-pointer" />
+                    <FaTrashAlt onClick={() => setShowModal(true)} className="text-[#E50000] cursor-pointer" />
                 </div>
                 <p className="text-sm text-[#606060]">{title}</p>
             </div>
+            <Modal handleOnClose={handleOnClose} visible={showModal}/>
         </article>
     );
 };
