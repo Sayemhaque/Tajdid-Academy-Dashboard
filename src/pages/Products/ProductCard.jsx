@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
     const { id, title, price, rating, image } = product;
     const [productId, setProductId] = useState(null)
     const [showModal, setShowModal] = useState(false)
-    const { mutate, isSuccess, isError, error,isPending} = useMutation({
+    const { mutate, isSuccess, isError, error, isPending } = useMutation({
         mutationFn: (id) => {
             return axios.delete(`https://fakestoreapi.com/products/${id}`)
         }

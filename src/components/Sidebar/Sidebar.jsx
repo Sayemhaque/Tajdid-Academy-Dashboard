@@ -3,7 +3,7 @@ import SidebarLinks from "./SidebarLinks";
 import { CiShop } from "react-icons/ci";
 const Sidebar = () => {
     return (
-        <aside className="w-[280px] h-screen border-r-2 py-8  flex flex-col justify-between">
+        <aside className="hidden md:w-[280px] h-screen border-r-2 py-8  md:flex flex-col justify-between">
             <div>
                 {/* Logo */}
                 <h1

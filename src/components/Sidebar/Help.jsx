@@ -7,7 +7,7 @@ const Help = () => {
             <h4 className='text-md text-center'>Help Center</h4>
             <p className='text-center text-sm'>Getting trouble on Simplebook? Reach out and solve your problem</p>
             <Button
-                styles={"bg-[#1570EF] w-full text-sm py-2 rounded-md text-white"}
+                styles={"bg-[#1570EF] w-full text-white"}
                 content={"Consult Now"}
             />
             {/* icons */}

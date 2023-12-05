@@ -15,14 +15,15 @@ const Header = ({ onSubmit, isPending }) => {
             <div className="space-x-3">
                 <Link to="/">
                     <Button
-                        styles={"px-4 py-2 border border-gray-300 font-bold rounded-md"}
+                        styles={"border border-gray-300"}
                         content={"Cancel"}
                     />
                 </Link>
                 <Button
                     type="sumbit"
                     onClick={onSubmit}
-                    styles={`${isPending && "bg-opacity-30"} px-4 py-2 bg-[#1570EF] text-white font-bold border border-gray-300 rounded-md`}
+                    styles={`${isPending && "bg-opacity-30"}  
+                    bg-[#1570EF] text-white  border border-gray-300`}
                     content={isPending ? "creating..." : "create"}
                 />
             </div>

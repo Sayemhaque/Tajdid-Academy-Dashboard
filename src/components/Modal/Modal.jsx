@@ -16,12 +16,13 @@ const Modal = ({ visible, handleOnClose,onClick,isPending}) => {
                 <div className="flex items-center gap-4 mt-8">
                     <Button
                         onClick={handleOnClose}
-                        styles={"text-sm w-1/2 py-2 rounded-md border border-gray-300"}
+                        styles={"text-sm w-1/2  rounded-md border border-gray-300"}
                         content={"Cancel"}
                     />
                     <Button
                         onClick={onClick}
-                        styles={`${isPending ? "bg-opacity-30 " : ""}bg-[#E50000] w-1/2 text-sm py-2 rounded-md text-white`}
+                        styles={`${isPending ? "bg-opacity-30 " : ""} 
+                        bg-[#E50000] text-white`}
                         content={isPending ? "Deleting.." : "Delete"}
                     />
                 </div>
