@@ -7,7 +7,9 @@ const Dashboard = () => {
             <div className="flex">
                 {/* sidebar */}
             <Sidebar/>
+            <div className="w-[1096px]">
             <Outlet/>
+            </div>
 
             {/* content area */}
             </div>

@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 
 const CreateProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
-    const {mutate,isSuccess}= useMutation({
+    const {mutate,isSuccess,isPending}= useMutation({
         mutationFn: (data) => {
             return axios.post("https://fakestoreapi.com/products",data)
         },
@@ -32,8 +32,8 @@ const CreateProduct = () => {
         reset()
     }
     return (
-        <section className="w-[1096px]">
-            <Header onSubmit={handleSubmit(onSubmit)} />
+        <section>
+            <Header isPending={isPending} onSubmit={handleSubmit(onSubmit)} />
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="px-8 py-8 mt-16 space-y-12">
                 <div className="flex gap-72">

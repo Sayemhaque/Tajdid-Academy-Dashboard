@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import Button from "../Button/Button";
 
 
-const Modal = ({ visible, handleOnClose,onClick}) => {
+const Modal = ({ visible, handleOnClose,onClick,isPending}) => {
     if (!visible) return null
     return (
         <div className="fixed inset-0 bg-[#344054] bg-opacity-40  flex justify-center items-center backdrop-blur-sm z-50">
@@ -21,8 +21,8 @@ const Modal = ({ visible, handleOnClose,onClick}) => {
                     />
                     <Button
                         onClick={onClick}
-                        styles={"bg-[#E50000] w-1/2  text-sm py-2 rounded-md text-white"}
-                        content={"Delete"}
+                        styles={`${isPending ? "bg-opacity-30 " : ""}bg-[#E50000] w-1/2 text-sm py-2 rounded-md text-white`}
+                        content={isPending ? "Deleting.." : "Delete"}
                     />
                 </div>
             </div>

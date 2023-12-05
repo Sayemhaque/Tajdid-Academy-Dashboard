@@ -3,7 +3,7 @@ import Products from "./Products";
 
 const ProductContent = () => {
     return (
-        <section className="w-[1096px]">
+        <section>
           <Header/>
           <Products/>
         </section>
