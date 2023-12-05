@@ -10,7 +10,7 @@ const Pagination = ({ currentPage, totalPages }) => {
             <div>
                 <p
                     className={`rounded flex items-center gap-2 cursor-pointer ${isPreviousDisabled ? 'text-gray-400 cursor-not-allowed' : ''
-                        } text-gray-400`}
+                        } text-gray-100`}
                     disabled={isPreviousDisabled}
                 >
                     <FiArrowLeft />
