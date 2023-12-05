@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "product Deleted successfully",
+                title: "Product Deleted successfully",
                 showConfirmButton: false,
                 timer: 1500
             });
