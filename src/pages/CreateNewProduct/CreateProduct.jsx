@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 
 
@@ -22,6 +23,10 @@ const CreateProduct = () => {
     const onSubmit = (data) => {
         console.log(data, errors, isSuccess)
         mutate(data)
+        reset()
+    }
+
+    useEffect(() => {
         if (isSuccess) {
             Swal.fire({
                 position: "top-end",
@@ -31,8 +36,8 @@ const CreateProduct = () => {
                 timer: 1500
             });
         }
-        reset()
-    }
+    }, [isSuccess])
+    
     return (
         <section>
             <Header isPending={isPending} onSubmit={handleSubmit(onSubmit)} />
