@@ -24,7 +24,7 @@ const Header = ({ onSubmit, isPending }) => {
                     onClick={onSubmit}
                     styles={`${isPending && "bg-opacity-30"}  
                     bg-[#1570EF] text-white  border border-gray-300`}
-                    content={isPending ? "creating..." : "create"}
+                    content={isPending ? "Creating..." : "Create"}
                 />
             </div>
         </div>

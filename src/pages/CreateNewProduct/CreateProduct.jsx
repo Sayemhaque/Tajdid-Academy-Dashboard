@@ -12,28 +12,32 @@ import Swal from "sweetalert2";
 
 const CreateProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
-    const {mutate,isSuccess,isPending}= useMutation({
+    const { mutate, isSuccess, isPending, isError, error } = useMutation({
         mutationFn: (data) => {
-            return axios.post("https://fakestoreapi.com/products",data)
+            return axios.post("https://fakestoreapi.com/productss", data)
         },
     })
-   
-    
+
+
     const onSubmit = (data) => {
-        console.log(data, errors,isSuccess)
+        console.log(data, errors, isSuccess)
         mutate(data)
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "product created successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
+        if (isSuccess) {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "product created successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
         reset()
     }
     return (
         <section>
             <Header isPending={isPending} onSubmit={handleSubmit(onSubmit)} />
+            {/* error message */}
+            {isError && <p className="mt-5 pr-8 text-right text-red-500">{error.message}</p>}
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="px-8 py-8 mt-16 space-y-12">
                 <div className="flex gap-72">
