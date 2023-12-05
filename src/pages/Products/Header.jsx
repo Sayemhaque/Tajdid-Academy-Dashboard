@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button"
-import { FaChevronDown} from "react-icons/fa"
 const Header = () => {
     return (
         <header className="py-8 md:py-12 px-5 md:px-8 flex justify-between items-center  h-[54px]">
@@ -22,7 +21,6 @@ const Header = () => {
                     <div>
                         <div className="flex gap-2 items-center">
                             <p className="text-sm md:text-md font-semibold">Md Sayem Mia</p>
-                            <FaChevronDown />
                         </div>
                         <p className="text-sm font-semibold">user</p>
                     </div>
