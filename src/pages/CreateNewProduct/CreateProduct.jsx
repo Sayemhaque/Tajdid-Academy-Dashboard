@@ -42,12 +42,13 @@ const CreateProduct = () => {
   return (
     <section>
       <Header isPending={isPending} onSubmit={handleSubmit(onSubmit)} />
-      {/* error message */}
       {isError && (
         <p className="mt-5 pr-8 text-right text-red-500">{error.message}</p>
       )}
-      {/* Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="px-8 py-8 mt-16 space-y-11">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="px-8 py-8 mt-16 space-y-11"
+      >
         <div className="grid grid-cols-3">
           <Label content={"Title"} />
           <div>
@@ -104,6 +105,3 @@ const CreateProduct = () => {
 };
 
 export default CreateProduct;
-
-//Form and form data need
-//fuction need to submit

@@ -22,13 +22,11 @@ const ProductCard = ({ product }) => {
     setShowModal(false);
   };
 
-  //show modal and get the productId
   const handleShowModal = (id) => {
     setShowModal(true);
     setProductId(id);
   };
 
-  // delete product
   const handleDelete = () => {
     mutate(productId);
     console.log(isError, isSuccess, error?.message);
@@ -48,7 +46,7 @@ const ProductCard = ({ product }) => {
   }, [isSuccess]);
 
   return (
-    <article className="bg-[#FFFFFF] border border-[#DEE2E7] rounded-md py-3 px-4">
+    <article className="bg-[#FFFFFF] border border-gray-300 rounded-md py-3 px-4">
       <img
         src={image}
         alt=""
@@ -76,8 +74,6 @@ const ProductCard = ({ product }) => {
               {title.substring(0, 25)}...
             </p>
           </div>
-
-          {/* trash icon */}
           <div>
             <div className="border border-[#DEE2E7]  rounded-md p-2">
               <img
@@ -93,18 +89,10 @@ const ProductCard = ({ product }) => {
         isPending={isPending}
         onClick={handleDelete}
         handleOnClose={handleOnClose}
-        visible={showModal}
+        open={showModal}
       />
     </article>
   );
 };
 
 export default ProductCard;
-
-// price
-
-// rating+text
-
-// tittle
-
-// trash icon

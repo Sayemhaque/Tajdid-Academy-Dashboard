@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { FiChevronDown } from "react-icons/fi";
 import { SidebarLink } from "./SidebarLink";
-import PorudctIcon from "../../assets/icons/3-layers.png"
-import AnalyticsIcon from "../../assets/icons/Vector.png"
-import BillingIcon from "../../assets/icons/icon.png"
-import HomeIcon from "../../assets/icons/Icon (1).png"
-import UserIcon from "../../assets/icons/Icon (2).png"
-import LogOutIcon from "../../assets/icons/Icon (3).png"
+import PorudctIcon from "../../assets/icons/product.svg"
+import AnalyticsIcon from "../../assets/icons/Analytics.svg"
+import BillingIcon from "../../assets/icons/Billing.svg"
+import CompanyIcon from "../../assets/icons/company.svg"
+import UserIcon from "../../assets/icons/admin.svg"
+import LogOutIcon from "../../assets/icons/LogOut.svg"
 
 
 const SidebarLinks = () => {
@@ -28,7 +28,7 @@ const SidebarLinks = () => {
                     ChevronDownIcon={<FiChevronDown />}
                     to={"billing"} />
                 <SidebarLink
-                    icon={HomeIcon}
+                    icon={CompanyIcon}
                     text="Company"
                     ChevronDownIcon={<FiChevronDown />}
                     to={"company"} />
