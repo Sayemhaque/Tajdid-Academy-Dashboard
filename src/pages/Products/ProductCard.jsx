@@ -1,6 +1,7 @@
 import Rating from "react-rating";
 import { FiStar } from "react-icons/fi"
-import { FaStar, FaTrashAlt } from "react-icons/fa"
+import { FaStar } from "react-icons/fa"
+import TrashIcon from "../../assets/icons/Vector.svg"
 import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
@@ -47,28 +48,38 @@ const ProductCard = ({ product }) => {
     }, [isSuccess]);
 
     return (
-        <article className="border border-gray-200 p-3">
+        <article className="bg-[#FFFFFF] border border-[#DEE2E7] rounded-md py-3 px-4">
             <img
                 src={image}
                 alt=""
-                className="w-[200px] h-[200px] mx-auto"
+                className="w-[163px] h-[214px]  object-contain mx-auto"
             />
-            <div className="space-y-2">
-                <p className="text-md font-bold mt-3">${price}</p>
+            <div className="pt-3 py-2">
                 <div className="flex justify-between items-center">
-                    <div >
-                        {/* rating */}
-                        <Rating
-                            readonly
-                            placeholderRating={rating.rate}
-                            emptySymbol={<FiStar className="text-[#FF9017] text-md" />}
-                            placeholderSymbol={<FaStar className="text-[#FF9017] text-md" />}
-                        />
-                        <span className="text-[#FF9017] text-md font-bold ml-1">{rating.rate}</span>
+                    <div className="space-y-2">
+                        {/* price*/}
+                        <h5 className="text-lg font-bold mt-3">${price}</h5>
+                        <div className="flex items-center">
+                            <Rating
+                                readonly
+                                placeholderRating={rating.rate}
+                                emptySymbol={<FiStar className="text-[#FF9017] w-4 h-[15px]" />}
+                                placeholderSymbol={<FaStar className="text-[#FF9017] w-4 h-[15px]" />}
+                            />
+                            <p className="text-[#FF9017] text-[16px] font-semibold ml-2">{rating.rate}</p>
+                        </div>
+                        <p className="text-[16px] text-[#606060]">{title.substring(0, 25)}...</p>
                     </div>
-                    <FaTrashAlt onClick={() => handleShowModal(id)} className="text-[#E50000] cursor-pointer" />
+
+                    {/* trash icon */}
+                    <div>
+                        <div className="border border-[#DEE2E7]  rounded-md p-2">
+                            <img src={TrashIcon} onClick={() => handleShowModal(id)}
+                                className="w-5 h-5 cursor-pointer " />
+                        </div>
+                    </div>
                 </div>
-                <p className="text-sm text-[#606060]">{title}</p>
+
             </div>
             <Modal isPending={isPending} onClick={handleDelete} handleOnClose={handleOnClose} visible={showModal} />
         </article>
@@ -76,3 +87,15 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
+
+
+// price
+
+// rating+text
+
+// tittle
+
+
+// trash icon
+
