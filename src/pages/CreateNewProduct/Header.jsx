@@ -8,11 +8,11 @@ const Header = ({ onSubmit, isPending }) => {
     <div className="flex justify-between  h-[54px] px-8 py-8">
       <div>
         <p className="text-lg font-bold">Create product</p>
-        <p className="text-sm">Upload your product photo and details here.</p>
+        <p className="text-sm font-medium text-[#475467]">Upload your product photo and details here.</p>
       </div>
       <div className="space-x-3">
         <Link to="/">
-          <Button styles={"border border-gray-300"} content={"Cancel"} />
+          <Button styles={"border border-gray-300 text-black"} content={"Cancel"} />
         </Link>
         <Button
           type="sumbit"

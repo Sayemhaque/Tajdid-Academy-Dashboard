@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        Audiowide:"'Audiowide', sans-serif"
+        Audiowide:"'Audiowide', sans-serif",
+        Inter:"'Inter', sans-serif"
       }
     },
   },

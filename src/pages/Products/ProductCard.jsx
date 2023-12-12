@@ -70,12 +70,12 @@ const ProductCard = ({ product }) => {
                 {rating.rate}
               </p>
             </div>
-            <p className="text-[16px] text-[#606060]">
-              {title.substring(0, 25)}...
+            <p className="text-base font-normal text-[#606060]">
+              {title.substring(0, 20)}...
             </p>
           </div>
           <div>
-            <div className="border border-[#DEE2E7]  rounded-md p-2">
+            <div className="border border-gray-300 rounded-md p-2">
               <img
                 src={TrashIcon}
                 onClick={() => handleShowModal(id)}

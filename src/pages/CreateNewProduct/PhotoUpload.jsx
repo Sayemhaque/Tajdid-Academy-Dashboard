@@ -1,10 +1,10 @@
 import DownLoadIcon from "../../assets/icons/Icon (4).png";
 const PhotoUpload = () => {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 gap-12">
       <div>
         <label>Product Photo</label>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm font-medium text-[#475467]">
           This will be displayed on your product
         </p>
       </div>
@@ -22,7 +22,7 @@ const PhotoUpload = () => {
             <div className="w-10 h-10 bg-[#EFF8FF] flex justify-center items-center rounded-full">
               <img src={DownLoadIcon} className="text-gray-400" />
             </div>
-            <p className="mt-5">
+            <p className="mt-5 text-sm">
               {" "}
               <label
                 htmlFor="image"

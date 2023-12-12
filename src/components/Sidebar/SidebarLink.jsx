@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 export const SidebarLink = ({ icon, text, ChevronDownIcon, to }) => {
   return (
     <>
-      <li className="flex justify-between items-center text-md cursor-pointer px-8 text-[#101828] py-[10px] font-semibold">
-        <Link to={to} className="flex items-center gap-4">
+      <Link to={to} className="flex justify-between items-center  cursor-pointer px-8  py-[10px] ">
+        <div  className="flex items-center gap-4">
           <img className="w-4 h-4 object-contain" src={icon} alt="" />
-          {text}
-        </Link>
+          <p className="text-[#101828] font-normal text-sm">{text}</p>
+        </div>
         {ChevronDownIcon}
-      </li>
+      </Link>
     </>
   );
 };

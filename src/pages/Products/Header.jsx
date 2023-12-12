@@ -7,7 +7,7 @@ const Header = () => {
       <h3 className="text-xl md:text-3xl font-bold">Products</h3>
       <div className="flex items-center gap-8">
         <Link to="create">
-          <Button styles={"bg-[#1570EF] text-white"} content={"Create new"} />
+          <Button styles={"bg-[#1570EF] text-[#FFFFFF]"} content={"Create new"} />
         </Link>
         <div className="flex gap-2">
           <img
@@ -20,7 +20,7 @@ const Header = () => {
               <p className="text-sm md:text-md font-semibold">Md Sayem Mia</p>
               <FiChevronDown />
             </div>
-            <p className="text-sm font-semibold">user</p>
+            <p className="text-sm font-normal">user</p>
           </div>
         </div>
       </div>

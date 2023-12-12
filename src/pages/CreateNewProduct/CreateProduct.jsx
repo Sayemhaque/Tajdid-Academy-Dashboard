@@ -49,7 +49,7 @@ const CreateProduct = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="px-8 py-8 mt-16 space-y-11"
       >
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 gap-12">
           <Label content={"Title"} />
           <div>
             <InputField
@@ -63,7 +63,7 @@ const CreateProduct = () => {
             )}
           </div>
         </div>
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 gap-12">
           <Label content={"Price"} />
           <div>
             <InputField
@@ -78,11 +78,11 @@ const CreateProduct = () => {
           </div>
         </div>
         <PhotoUpload />
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 gap-12">
           <div>
-            <Label content={"Photo"} />
-            <p className="text-sm text-gray-400">
-              This will be displayed on your product
+            <Label content={"Description"} />
+            <p className="text-sm font-medium text-[#475467]">
+              write a short description
             </p>
           </div>
           <div>
