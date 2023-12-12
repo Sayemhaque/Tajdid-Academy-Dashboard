@@ -48,14 +48,14 @@ const SidebarLinks = () => {
           ChevronDownIcon={<FiChevronDown />}
           to={"company"}
         />
-        <div className="flex flex-col justify-start items-start px-8">
+        <div className="flex flex-col justify-start items-start px-8 space-y-3">
           <div className="flex items-center">
             <img src={UserIcon} alt="" />
-            <Button content={"Admin"} />
+            <Button styles={""} content={"Admin"} />
           </div>
           <div className="flex items-center">
             <img src={LogOutIcon} alt="" />
-            <Button content={"Logout"} />
+            <Button styles={""} content={"Logout"} />
           </div>
         </div>
       </ul>
