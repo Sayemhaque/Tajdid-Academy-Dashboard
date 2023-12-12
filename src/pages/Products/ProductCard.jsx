@@ -46,26 +46,26 @@ const ProductCard = ({ product }) => {
   }, [isSuccess]);
 
   return (
-    <article className="bg-[#FFFFFF] border border-gray-300 rounded-md py-3">
-     <div className="border-b border-gray-300 py-4">
-     <img
-        src={image}
-        alt=""
-        className="w-[163px] h-[180px]  object-contain mx-auto"
-      />
-     </div>
+    <article className="bg-[#FFFFFF] border border-gray-300 rounded-md pt-8">
+      <div className="border-b border-gray-300 py-3">
+        <img
+          src={image}
+          alt=""
+          className="w-[163px] h-[180px]  object-contain mx-auto"
+        />
+      </div>
       <div className="py-2">
         <div className="flex justify-between items-center px-5">
-          <div className="space-y-2 ">
+          <div className="space-y-2">
             {/* price*/}
             <h5 className="text-lg font-bold mt-2">${price}</h5>
             <div className="flex items-center">
               <Rating
                 readonly
                 placeholderRating={rating.rate}
-                emptySymbol={<FiStar className="text-[#FF9017] w-4 h-[15px]" />}
+                emptySymbol={<FiStar className="text-[#FF9017] text-sm" />}
                 placeholderSymbol={
-                  <FaStar className="text-[#FF9017] w-4 h-[15px]" />
+                  <FaStar className="text-[#FF9017] text-sm" />
                 }
               />
               <p className="text-[#FF9017] text-[16px] font-semibold ml-2">
