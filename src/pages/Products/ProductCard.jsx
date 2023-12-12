@@ -58,7 +58,7 @@ const ProductCard = ({ product }) => {
         <div className="flex justify-between items-center px-5">
           <div className="space-y-2 ">
             {/* price*/}
-            <h5 className="text-lg font-bold">${price}</h5>
+            <h5 className="text-lg font-bold mt-2">${price}</h5>
             <div className="flex items-center">
               <Rating
                 readonly
