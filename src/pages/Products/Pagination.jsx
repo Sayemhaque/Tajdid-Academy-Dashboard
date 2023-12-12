@@ -6,7 +6,8 @@ const Pagination = ({ currentPage, totalPages }) => {
   const isNextDisabled = currentPage === totalPages;
 
   return (
-    <div className="flex items-center justify-between px-8 py-4">
+   <div className="mx-8 pb-12">
+     <div className="flex items-center justify-between px-6 pt-5 mt-5 border-t border-gray-200">
       <div>
         <p
           className={`rounded flex items-center gap-2 cursor-pointer ${
@@ -44,6 +45,7 @@ const Pagination = ({ currentPage, totalPages }) => {
         </p>
       </div>
     </div>
+   </div>
   );
 };
 

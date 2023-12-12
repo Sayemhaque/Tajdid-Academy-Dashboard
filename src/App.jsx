@@ -1,13 +1,11 @@
-import Dashboard from "./components/Dashboard/Dashboard"
-
-
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
-    <div className="bg-[#FCFCFD]">
-     <Dashboard/>
+    <div>
+      <Dashboard />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

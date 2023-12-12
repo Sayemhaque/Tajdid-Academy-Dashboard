@@ -46,17 +46,19 @@ const ProductCard = ({ product }) => {
   }, [isSuccess]);
 
   return (
-    <article className="bg-[#FFFFFF] border border-gray-300 rounded-md py-3 px-4">
-      <img
+    <article className="bg-[#FFFFFF] border border-gray-300 rounded-md py-3">
+     <div className="border-b border-gray-300 py-4">
+     <img
         src={image}
         alt=""
         className="w-[163px] h-[180px]  object-contain mx-auto"
       />
-      <div className="pt-3 py-2">
-        <div className="flex justify-between items-center">
-          <div className="space-y-2">
+     </div>
+      <div className="py-2">
+        <div className="flex justify-between items-center px-5">
+          <div className="space-y-2 ">
             {/* price*/}
-            <h5 className="text-lg font-bold mt-3">${price}</h5>
+            <h5 className="text-lg font-bold">${price}</h5>
             <div className="flex items-center">
               <Rating
                 readonly

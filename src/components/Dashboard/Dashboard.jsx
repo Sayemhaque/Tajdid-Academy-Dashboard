@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div className="flex justify-between font-Inter">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex-1 bg-gray-50">
         <Outlet />
       </div>
     </div>

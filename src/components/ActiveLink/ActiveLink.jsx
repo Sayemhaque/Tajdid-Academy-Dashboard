@@ -1,16 +1,17 @@
-// /* eslint-disable react/prop-types */
-// import { NavLink } from 'react-router-dom';
+/* eslint-disable react/prop-types */
+import { NavLink } from 'react-router-dom';
 
-// const ActiveLink = ({to , children}) => {
-//     return (
-//         <NavLink
-//         to={to}
-//          : ""
-//         }
-//       >
-//        {children}
-//       </NavLink>
-//     );
-// };
+const ActiveLink = ({to , children}) => {
+    return (
+        <NavLink
+        to={to}
+        className={({ isActive}) =>
+           isActive ? "text-slate-900" : ""
+        }
+      >
+       {children}
+      </NavLink>
+    );
+};
 
-// export default ActiveLink;
+export default ActiveLink;
