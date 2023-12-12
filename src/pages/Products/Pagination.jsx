@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalPages }) => {
         {[...Array(totalPages)].map((_, index) => (
           <button
             key={index + 1}
-            className={`font-bold px-3 py-1 mx-1 rounded ${
+            className={`font-medium px-3 py-1 mx-1 rounded ${
               currentPage === index + 1
                 ? "bg-[#EFF8FF] text-[#1570EF]"
                 : "text-gray-700"

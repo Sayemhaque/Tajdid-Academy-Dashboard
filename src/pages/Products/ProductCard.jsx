@@ -6,7 +6,6 @@ import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect } from "react";
 import Swal from "sweetalert2";
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
@@ -17,7 +16,18 @@ const ProductCard = ({ product }) => {
     mutationFn: (id) => {
       return axios.delete(`https://fakestoreapi.com/products/${id}`);
     },
+    onSuccess: () => {
+      setShowModal(false);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Product Deleted successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    },
   });
+
   const handleOnClose = () => {
     setShowModal(false);
   };
@@ -31,19 +41,6 @@ const ProductCard = ({ product }) => {
     mutate(productId);
     console.log(isError, isSuccess, error?.message);
   };
-
-  useEffect(() => {
-    if (isSuccess) {
-      setShowModal(false);
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Product Deleted successfully",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  }, [isSuccess]);
 
   return (
     <article className="bg-[#FFFFFF] border border-gray-300 rounded-md pt-8">

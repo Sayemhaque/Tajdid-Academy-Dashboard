@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useEffect } from "react";
+import Error from "../../components/Loading/Error";
 
 const CreateProduct = () => {
   const {
@@ -15,20 +15,11 @@ const CreateProduct = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const { mutate, isSuccess, isPending, isError, error } = useMutation({
+  const { mutate, isPending, isError, error } = useMutation({
     mutationFn: (data) => {
       return axios.post("https://fakestoreapi.com/products", data);
     },
-  });
-
-  const onSubmit = (data) => {
-    console.log(data, errors, isSuccess);
-    mutate(data);
-    reset();
-  };
-
-  useEffect(() => {
-    if (isSuccess) {
+    onSuccess: () => {
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -36,15 +27,21 @@ const CreateProduct = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-    }
-  }, [isSuccess]);
+    },
+  });
+
+  if (isError) {
+    return <Error message={error.message} />;
+  }
+
+  const onSubmit = (data) => {
+    mutate(data);
+    reset();
+  };
 
   return (
     <section>
       <Header isPending={isPending} onSubmit={handleSubmit(onSubmit)} />
-      {isError && (
-        <p className="mt-5 pr-8 text-right text-red-500">{error.message}</p>
-      )}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="px-8 py-8 mt-16 space-y-11"

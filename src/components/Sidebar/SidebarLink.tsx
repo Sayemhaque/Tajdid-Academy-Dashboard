@@ -1,7 +1,14 @@
+import React from "react"
 import { Link } from "react-router-dom";
-
+type SidebarLinksProps = {
+  active: string;
+  icon: string;
+  text: string;
+  ChevronDownIcon?:React.ReactNode;
+  to: string;
+}
 // eslint-disable-next-line react/prop-types
-export const SidebarLink = ({active, icon, text, ChevronDownIcon, to }) => {
+export const SidebarLink: React.FC<SidebarLinksProps> = ({active, icon, text, ChevronDownIcon, to }) => {
   return (
     <>
       <Link to={to} className={`${active === to ? "bg-[#EFF8FF] border-l-8 border-[#1570EF]"  : ""} flex justify-between items-center  cursor-pointer px-8  py-[10px]`}>

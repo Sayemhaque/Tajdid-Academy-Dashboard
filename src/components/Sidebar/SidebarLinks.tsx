@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FiChevronDown } from "react-icons/fi";
 import { SidebarLink } from "./SidebarLink";
+import React from "react";
 import PorudctIcon from "../../assets/icons/product.svg";
 import AnalyticsIcon from "../../assets/icons/Analytics.svg";
 import BillingIcon from "../../assets/icons/Billing.svg";

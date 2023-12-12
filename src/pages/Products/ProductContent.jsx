@@ -3,10 +3,10 @@ import Products from "./Products";
 
 const ProductContent = () => {
     return (
-        <section>
+        <>
           <Header/>
           <Products/>
-        </section>
+        </>
     );
 };
 

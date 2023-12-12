@@ -1,3 +1,4 @@
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App"
 import Analytics from "../pages/Analytics/Analytics";
@@ -11,7 +12,7 @@ export const router = createBrowserRouter([
     {
       path: "/",
       element: <App/>,
-      errorElement: <p>eror</p>,
+      errorElement: <p>error</p>,
       children:[
         {
             path:"/",

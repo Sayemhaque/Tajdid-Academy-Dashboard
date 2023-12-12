@@ -1,3 +1,4 @@
+import React from "react"
 import Help from "./Help";
 import SidebarLinks from "./SidebarLinks";
 import Logo from "../../assets/icons/logo.svg";

@@ -1,5 +1,7 @@
+import React from 'react';
 import Button from "../Button/Button";
 import QuestionMarkIcon from "../../assets/icons/Vector (1).png";
+
 const Help = () => {
   return (
     <div className="bg-[#F5FAFF] px-3 pt-5 pb-5 space-y-3 mx-auto relative rounded-[10px]">
@@ -19,5 +21,3 @@ const Help = () => {
 };
 
 export default Help;
-
-// 
