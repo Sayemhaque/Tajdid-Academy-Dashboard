@@ -2,21 +2,26 @@ import Header from "./Header";
 import InputField from "../../components/InputField/InputField";
 import PhotoUpload from "./PhotoUpload";
 import Label from "../../components/Label/Label";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Error from "../../components/Loading/Error";
 
+interface Inputs {
+  title: string;
+  price: string;
+  description: string;
+}
 const CreateProduct = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<Inputs>();
   const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: (data) => {
+    mutationFn: (data: Inputs) => {
       return axios.post("https://fakestoreapi.com/products", data);
     },
     onSuccess: () => {
@@ -34,7 +39,7 @@ const CreateProduct = () => {
     return <Error message={error.message} />;
   }
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     mutate(data);
     reset();
   };
@@ -85,7 +90,9 @@ const CreateProduct = () => {
           <div>
             <textarea
               {...register("description", { required: true })}
+              //@ts-ignore
               cols="50"
+              //@ts-ignore
               rows="5"
               className="w-[512px] border border-[#D0D5DD] rounded-md focus:outline-none p-2"
               placeholder=" write something about your product.."

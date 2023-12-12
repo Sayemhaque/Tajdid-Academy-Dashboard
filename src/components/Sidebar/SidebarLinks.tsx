@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { FiChevronDown } from "react-icons/fi";
 import { SidebarLink } from "./SidebarLink";
-import React from "react";
-import PorudctIcon from "../../assets/icons/product.svg";
-import AnalyticsIcon from "../../assets/icons/Analytics.svg";
-import BillingIcon from "../../assets/icons/Billing.svg";
-import CompanyIcon from "../../assets/icons/company.svg";
-import UserIcon from "../../assets/icons/admin.svg";
-import LogOutIcon from "../../assets/icons/LogOut.svg";
+const PorudctIcon = "../../assets/icons/product.svg";
+const AnalyticsIcon = "../../assets/icons/Analytics.svg";
+const BillingIcon = "../../assets/icons/Billing.svg";
+const CompanyIcon = "../../assets/icons/company.svg";
+const UserIcon = "../../assets/icons/admin.svg";
+const LogOutIcon = "../../assets/icons/LogOut.svg";
+
 import { useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 

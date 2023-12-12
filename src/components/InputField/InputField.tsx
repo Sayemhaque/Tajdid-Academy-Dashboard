@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
 
+interface InputFieldProps {
+  
+}
+
 const InputField = ({ type, placeholder, name, register }) => {
   return (
     <input

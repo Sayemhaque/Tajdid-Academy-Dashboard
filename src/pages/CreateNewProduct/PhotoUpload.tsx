@@ -1,4 +1,5 @@
-import DownLoadIcon from "../../assets/icons/Icon (4).png";
+
+const DownLoadIcon = "../../assets/icons/Icon (4).png";
 const PhotoUpload = () => {
   return (
     <div className="grid grid-cols-3 gap-12">

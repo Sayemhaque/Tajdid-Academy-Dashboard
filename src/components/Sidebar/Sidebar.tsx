@@ -1,7 +1,7 @@
 import React from "react"
 import Help from "./Help";
 import SidebarLinks from "./SidebarLinks";
-import Logo from "../../assets/icons/logo.svg";
+const Logo = "../../assets/icons/logo.svg";
 const Sidebar = () => {
   return (
     <aside className="hidden sticky inset-0 w-72 h-screen    md:flex flex-col justify-between bg-[#FFFFFF] shadow-xl">

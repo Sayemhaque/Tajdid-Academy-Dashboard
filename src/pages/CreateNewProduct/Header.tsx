@@ -2,20 +2,30 @@
 
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import { ReactEventHandler } from "react";
 
-const Header = ({ onSubmit, isPending }) => {
+interface HeaderProps {
+  onSubmit: ReactEventHandler;
+  isPending: boolean;
+}
+const Header: React.FC<HeaderProps> = ({ onSubmit, isPending }) => {
   return (
     <div className="flex justify-between  h-[54px] px-8 py-8">
       <div>
         <p className="text-lg font-bold">Create product</p>
-        <p className="text-sm font-medium text-[#475467]">Upload your product photo and details here.</p>
+        <p className="text-sm font-medium text-[#475467]">
+          Upload your product photo and details here.
+        </p>
       </div>
       <div className="space-x-3">
         <Link to="/">
-          <Button styles={"border border-gray-300 text-black"} content={"Cancel"} />
+          <Button
+            styles={"border border-gray-300 text-black"}
+            content={"Cancel"}
+          />
         </Link>
         <Button
-          type="sumbit"
+          type="submit"
           onClick={onSubmit}
           styles={`${
             isPending && "bg-opacity-30"
