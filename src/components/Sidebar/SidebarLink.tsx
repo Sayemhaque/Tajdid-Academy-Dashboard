@@ -18,7 +18,7 @@ export const SidebarLink = ({
       >
         <div className="flex items-center gap-4">
           <img className="w-4 h-4 object-contain" src={icon} alt="" />
-          <p className="text-[#101828] font-medium text-sm">{text}</p>
+          <p className="text-black font-medium text-md">{text}</p>
         </div>
         {ChevronDownIcon}
       </Link>
