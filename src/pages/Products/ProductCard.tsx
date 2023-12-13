@@ -8,9 +8,24 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
 /* eslint-disable react/prop-types */
-const ProductCard = ({ product }) => {
-  const { id, title, price, rating, image } = product;
-  const [productId, setProductId] = useState(null);
+
+interface ProductProps {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
+
+type PorductId = Number;
+const ProductCard = (props: ProductProps) => {
+  const { id, title, price, rating, image } = props;
+  const [productId, setProductId] = useState<PorductId>(null);
   const [showModal, setShowModal] = useState(false);
   const { mutate, isSuccess, isError, error, isPending } = useMutation({
     mutationFn: (id) => {
@@ -86,7 +101,7 @@ const ProductCard = ({ product }) => {
       </div>
       <Modal
         isPending={isPending}
-        onClick={handleDelete}
+        handleDelete={handleDelete}
         handleOnClose={handleOnClose}
         open={showModal}
       />
