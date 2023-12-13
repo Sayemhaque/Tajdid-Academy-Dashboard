@@ -1,6 +1,5 @@
-import React from 'react';
 import Button from "../Button/Button";
-const QuestionMarkIcon = "../../assets/icons/Vector (1).png";
+import QuestionMarkIcon from "../../assets/icons/Vector (1).png";
 
 const Help = () => {
   return (

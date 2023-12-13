@@ -1,9 +1,6 @@
-import React from "react";
-interface ErrorProps {
-  message: string;
-}
+import { ErrorProps } from "../../Model/types";
 
-const Error: React.FC<ErrorProps> = ({ message }) => (
+const Error = ({ message }: ErrorProps) => (
   <p className="text-center text-xl font-bold text-red-600">{message}</p>
 );
 

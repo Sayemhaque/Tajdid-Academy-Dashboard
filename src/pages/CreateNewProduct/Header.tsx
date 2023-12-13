@@ -1,14 +1,8 @@
-/* eslint-disable react/prop-types */
-
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import { ReactEventHandler } from "react";
+import { CreateProductHeaderProps } from "../../Model/types";
 
-interface HeaderProps {
-  onSubmit: ReactEventHandler;
-  isPending: boolean;
-}
-const Header: React.FC<HeaderProps> = ({ onSubmit, isPending }) => {
+const Header = ({ onSubmit, isPending }: CreateProductHeaderProps) => {
   return (
     <div className="flex justify-between  h-[54px] px-8 py-8">
       <div>
@@ -26,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onSubmit, isPending }) => {
         </Link>
         <Button
           type="submit"
-          onClick={onSubmit}
+          handleClick={onSubmit}
           styles={`${
             isPending && "bg-opacity-30"
           } bg-[#1570EF] text-white  border border-gray-300`}

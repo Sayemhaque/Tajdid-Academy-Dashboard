@@ -1,13 +1,7 @@
-/* eslint-disable react/prop-types */
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { PaginationProps } from "../../Model/types";
 
-interface PaginationProps {
-  currentPage: Number;
-  totalPages: Number;
-  onPageChange: Number
-}
-
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
+const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
   const isPreviousDisabled = currentPage === 1;
   const isNextDisabled = currentPage === totalPages;
 

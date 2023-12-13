@@ -1,10 +1,6 @@
-/* eslint-disable react/prop-types */
+import { InputFieldProps } from "../../Model/types";
 
-interface InputFieldProps {
-  
-}
-
-const InputField = ({ type, placeholder, name, register }) => {
+const InputField = ({ type, placeholder, name, register }: InputFieldProps) => {
   return (
     <input
       type={type}

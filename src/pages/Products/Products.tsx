@@ -4,22 +4,10 @@ import Pagination from "./Pagination";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Loading/Error";
 import { fetchProducts } from "../../../lib/Http";
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
+import { Product } from "../../Model/types";
 
 const Products = () => {
-  const { isPending, isError, data, error } = useQuery({
+  const { isPending, isError, data, error } = useQuery<Product[]>({
     queryKey: ["products"],
     queryFn: fetchProducts,
   });

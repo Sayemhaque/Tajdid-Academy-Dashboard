@@ -1,20 +1,13 @@
-/* eslint-disable react/prop-types */
 import { FaTimes } from "react-icons/fa";
 import Button from "../Button/Button";
+import { ModelProps } from "../../Model/types";
 
-interface ModelProps {
-  open: boolean;
-  handleOnClose: () => void;
-  handleDelete: () => void;
-  isPending: boolean;
-}
-
-const Modal: React.FC<ModelProps> = ({
+const Modal = ({
   open,
   handleOnClose,
   handleDelete,
   isPending,
-}) => {
+}: ModelProps) => {
   if (!open) return null;
   return (
     <div className="fixed inset-0 bg-[#344054] bg-opacity-40  flex justify-center items-center backdrop-blur-sm z-50">

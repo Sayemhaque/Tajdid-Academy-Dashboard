@@ -7,28 +7,14 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
-/* eslint-disable react/prop-types */
+import { PorductId, ProductProps } from "../../Model/types";
 
-interface ProductProps {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
-
-type PorductId = Number;
-const ProductCard = (props: ProductProps) => {
-  const { id, title, price, rating, image } = props;
-  const [productId, setProductId] = useState<PorductId>(null);
+const ProductCard = ({ product }: ProductProps) => {
+  const { id, title, price, rating, image } = product;
+  const [productId, setProductId] = useState<PorductId>();
   const [showModal, setShowModal] = useState(false);
-  const { mutate, isSuccess, isError, error, isPending } = useMutation({
-    mutationFn: (id) => {
+  const { mutate, isPending } = useMutation({
+    mutationFn: (id: number) => {
       return axios.delete(`https://fakestoreapi.com/products/${id}`);
     },
     onSuccess: () => {
@@ -47,14 +33,15 @@ const ProductCard = (props: ProductProps) => {
     setShowModal(false);
   };
 
-  const handleShowModal = (id) => {
+  const handleShowModal = (id: number) => {
     setShowModal(true);
     setProductId(id);
   };
 
   const handleDelete = () => {
-    mutate(productId);
-    console.log(isError, isSuccess, error?.message);
+    if (productId) {
+      mutate(productId);
+    }
   };
 
   return (
@@ -69,17 +56,24 @@ const ProductCard = (props: ProductProps) => {
       <div className="py-2">
         <div className="flex justify-between items-center px-5">
           <div className="space-y-2">
-            {/* price*/}
             <h5 className="text-lg font-bold mt-2">${price}</h5>
             <div className="flex items-center">
+              //@ts-ignore
               <Rating
                 readonly
                 placeholderRating={rating.rate}
-                emptySymbol={<FiStar className="text-[#FF9017] text-sm" />}
+                emptySymbol={
+                  <div className="text-[#FF9017] text-sm">
+                    <FiStar />
+                  </div>
+                }
                 placeholderSymbol={
-                  <FaStar className="text-[#FF9017] text-sm" />
+                  <div className="text-[#FF9017] text-sm">
+                    <FaStar />
+                  </div>
                 }
               />
+
               <p className="text-[#FF9017] text-[16px] font-semibold ml-2">
                 {rating.rate}
               </p>

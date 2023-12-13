@@ -7,12 +7,9 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Error from "../../components/Loading/Error";
+import { Inputs } from "../../Model/types";
+import TextArea from "../../components/TextArea/TextArea";
 
-interface Inputs {
-  title: string;
-  price: string;
-  description: string;
-}
 const CreateProduct = () => {
   const {
     register,
@@ -71,7 +68,7 @@ const CreateProduct = () => {
             <InputField
               register={register}
               name="price"
-              type="Number"
+              type="number"
               placeholder="Price"
             />
             {errors.price && (
@@ -88,15 +85,7 @@ const CreateProduct = () => {
             </p>
           </div>
           <div>
-            <textarea
-              {...register("description", { required: true })}
-              //@ts-ignore
-              cols="50"
-              //@ts-ignore
-              rows="5"
-              className="w-[512px] border border-[#D0D5DD] rounded-md focus:outline-none p-2"
-              placeholder=" write something about your product.."
-            ></textarea>
+            <TextArea register={register} />
             <p>275 character left</p>
             {errors.description && (
               <p className="text-red-400 py-1">This field is required</p>

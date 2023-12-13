@@ -1,4 +1,3 @@
-
 const DownLoadIcon = "../../assets/icons/Icon (4).png";
 const PhotoUpload = () => {
   return (
