@@ -58,7 +58,6 @@ const ProductCard = ({ product }: ProductProps) => {
           <div className="space-y-2">
             <h5 className="text-lg font-bold mt-2">${price}</h5>
             <div className="flex items-center">
-              //@ts-ignore
               <Rating
                 readonly
                 placeholderRating={rating.rate}
@@ -73,7 +72,6 @@ const ProductCard = ({ product }: ProductProps) => {
                   </div>
                 }
               />
-
               <p className="text-[#FF9017] text-[16px] font-semibold ml-2">
                 {rating.rate}
               </p>

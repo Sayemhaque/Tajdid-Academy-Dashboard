@@ -1,16 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Loading/Error";
 import { fetchProducts } from "../../../lib/Http";
 import { Product } from "../../Model/types";
+import { useGetData } from "../../hooks/useGetData";
 
 const Products = () => {
-  const { isPending, isError, data, error } = useQuery<Product[]>({
-    queryKey: ["products"],
-    queryFn: fetchProducts,
-  });
+  const { isPending, isError, error, data } = useGetData(
+    "products",
+    fetchProducts,
+    5 * 60 * 1000
+  );
 
   if (isPending) {
     return <Loading />;
@@ -18,7 +19,6 @@ const Products = () => {
   if (isError) {
     return <Error message={error.message} />;
   }
-  console.log(data);
 
   return (
     <div>
