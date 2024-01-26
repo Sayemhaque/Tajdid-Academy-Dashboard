@@ -1,4 +1,3 @@
-import { FiChevronDown } from "react-icons/fi";
 import { SidebarLink } from "./SidebarLink";
 import PorudctIcon from "../../assets/icons/product.svg";
 import AnalyticsIcon from "../../assets/icons/Analytics.svg";
@@ -31,21 +30,18 @@ const SidebarLinks = () => {
           active={activeLink}
           icon={AnalyticsIcon}
           text="Analytics"
-          ChevronDownIcon={<FiChevronDown />}
           to={"analytics"}
         />
         <SidebarLink
           active={activeLink}
           icon={BillingIcon}
           text="Billing"
-          ChevronDownIcon={<FiChevronDown />}
           to={"billing"}
         />
         <SidebarLink
           active={activeLink}
           icon={CompanyIcon}
           text="Company"
-          ChevronDownIcon={<FiChevronDown />}
           to={"company"}
         />
         <div className="flex flex-col justify-start items-start px-8 space-y-3">

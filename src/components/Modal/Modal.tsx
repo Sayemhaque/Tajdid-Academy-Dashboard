@@ -1,4 +1,3 @@
-import { FaTimes } from "react-icons/fa";
 import Button from "../Button/Button";
 import { ModelProps } from "../../Model/types";
 
@@ -14,9 +13,6 @@ const Modal = ({
       <div className="bg-white w-[400px] h-[196px] rounded-md py-8 px-5">
         <div className="flex justify-between">
           <h5 className="text-lg font-semibold">Delete product</h5>
-          <div className="text-lg cursor-pointer" onClick={handleOnClose}>
-            <FaTimes />
-          </div>
         </div>
         <p className="text-sm text-gray-400 mt-3">
           Are you sure you want to delete this product from your lists?

@@ -1,6 +1,4 @@
 import Rating from "react-rating";
-import { FiStar } from "react-icons/fi";
-import { FaStar } from "react-icons/fa";
 import TrashIcon from "../../assets/icons/Vector.svg";
 import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
@@ -58,20 +56,7 @@ const ProductCard = ({ product }: ProductProps) => {
           <div className="space-y-2">
             <h5 className="text-lg font-bold mt-2">${price}</h5>
             <div className="flex items-center">
-              <Rating
-                readonly
-                placeholderRating={rating.rate}
-                emptySymbol={
-                  <div className="text-[#FF9017] text-sm">
-                    <FiStar />
-                  </div>
-                }
-                placeholderSymbol={
-                  <div className="text-[#FF9017] text-sm">
-                    <FaStar />
-                  </div>
-                }
-              />
+             
               <p className="text-[#FF9017] text-[16px] font-semibold ml-2">
                 {rating.rate}
               </p>

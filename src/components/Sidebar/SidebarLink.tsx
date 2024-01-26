@@ -5,7 +5,6 @@ export const SidebarLink = ({
   active,
   icon,
   text,
-  ChevronDownIcon,
   to,
 }: SidebarLinksProps) => {
   return (
@@ -20,7 +19,6 @@ export const SidebarLink = ({
           <img className="w-4 h-4 object-contain" src={icon} alt="" />
           <p className="text-black font-medium text-md">{text}</p>
         </div>
-        {ChevronDownIcon}
       </Link>
     </>
   );
